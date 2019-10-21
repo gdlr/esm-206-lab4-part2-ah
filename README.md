@@ -1,1 +1,7 @@
-# esm-206-lab4-part2-gd
+# This is my awesome ReadMe
+
+Gabe Lab 4 Part 2
+
+- point 1
+- point 2
+- point 3
