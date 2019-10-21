@@ -1,0 +1,52 @@
+---
+title: "Lab 4 Part 2"
+author: "Gabriel De La Rosa"
+date: "10/21/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## plotly creates interactive graphs and tables
+
+First, attach packages
+```{r, include = FALSE}
+
+library(tidyverse)
+library(plotly)
+library(DT)
+library(janitor)
+
+```
+
+
+Make an interactive graph of the iris data
+
+```{r}
+
+clean_iris <- iris %>% 
+  clean_names()
+
+
+iris_graph <- ggplot(data = clean_iris, 
+                     aes(x = petal_width, 
+                         y = petal_length)) +
+  geom_point(aes(size = sepal_width, 
+                 color = species),
+             alpha = 0.6) +
+  labs(x = "Petal width (cm)",
+       y = "Petal length (cm)",
+       title = "Iris metrics") +
+  theme_minimal()
+
+iris_graph
+
+ggplotly(iris_graph)
+
+
+```
+
+
